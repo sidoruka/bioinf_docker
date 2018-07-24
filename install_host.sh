@@ -24,7 +24,5 @@ container_id=$(cat /tmp/bioinf.cid)
 
 # Install access
 sudo docker cp install_docker.sh $container_id:/install_docker.sh
-sudo docker exec -i $container_id bash /install_docker.sh
-sudo docker exec $container_id rm -rf /install_docker.sh
-sudo docker cp nginx.conf $container_id:/etc/nginx/nginx.conf
-sudo docker exec $container_id nginx -s reload
+sudo docker cp nginx.conf $container_id:/nginx.conf
+sudo docker exec -it $container_id bash /install_docker.sh && rm -rf /install_docker.sh && nginx && sleep infinity

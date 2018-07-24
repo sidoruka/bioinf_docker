@@ -3,7 +3,10 @@ apt install -y  build-essential \
                 python \
                 wget \
                 git \
-                sudo && \
+                sudo \
+                nginx && \
+
+mv /nginx.conf /etc/nginx/nginx.conf
 
 USERNAME="bioinf" && \
 USERPASS=$(date +%s | sha256sum | base64 | head -c 32 ; echo) && \
