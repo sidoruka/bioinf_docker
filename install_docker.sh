@@ -4,10 +4,9 @@ apt install -y  build-essential \
                 wget \
                 git \
                 sudo \
-                nginx
+                nginx && \
 
-mv /nginx.conf /etc/nginx/nginx.conf
-nginx
+mv /nginx.conf /etc/nginx/nginx.conf && \
 
 USERNAME="bioinf" && \
 USERPASS=$(date +%s | sha256sum | base64 | head -c 32 ; echo) && \
