@@ -1,5 +1,5 @@
-apt update && \
-apt install -y  build-essential \
+apt-get update -y && \
+apt-get install -y  build-essential \
                 python \
                 wget \
                 git \
