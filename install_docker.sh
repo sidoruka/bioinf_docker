@@ -7,7 +7,7 @@ apt install -y  build-essential \
 
 USERNAME="bioinf" && \
 USERPASS=$(date +%s | sha256sum | base64 | head -c 32 ; echo) && \
-WETTY_PORT=31000 && \
+WETTY_PORT=32000 && \
 
 echo "===Creating user $USERNAME with password $USERPASS===" && \
 
