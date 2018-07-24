@@ -46,7 +46,7 @@ git clone https://github.com/krishnasrinivas/wetty && \
 cd wetty && \
 npm install && \
 
-echo "===Running wetty on port $WETTY_PORT===" && \
+echo "===Running wetty on port $WETTY_PORT==="
 
 nohup node app.js -p $WETTY_PORT &
 
