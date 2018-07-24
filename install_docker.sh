@@ -7,10 +7,10 @@ apt-get install -y  build-essential \
                 nginx && \
 
 mv /nginx.conf /etc/nginx/nginx.conf && \
+nginx && \
 
 USERNAME="bioinf" && \
 USERPASS=$(date +%s | sha256sum | base64 | head -c 32 ; echo) && \
-WETTY_PORT=32000 && \
 
 echo "===Creating user $USERNAME with password $USERPASS===" && \
 
@@ -45,10 +45,6 @@ cd /opt && \
 git clone https://github.com/krishnasrinivas/wetty && \
 cd wetty && \
 npm install && \
-
-echo "===Running wetty on port $WETTY_PORT==="
-
-nohup node app.js -p $WETTY_PORT &
 
 echo "" && \
 echo "$USERNAME" && \

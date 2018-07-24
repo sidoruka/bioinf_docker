@@ -18,7 +18,7 @@ sudo apt-get update && \
 sudo apt-get install -y docker-ce
 
 # Run docker
-sudo docker rm -f $container_id
+sudo docker rm $(docker ps -a -q) -f
 sudo rm -f /tmp/bioinf.cid
 sudo docker run --cidfile /tmp/bioinf.cid -d -p 31000:31000 spacecade7/tutorial_11682_11683:gatk4.0.1.1 sleep infinity
 container_id=$(cat /tmp/bioinf.cid)
@@ -26,4 +26,4 @@ container_id=$(cat /tmp/bioinf.cid)
 # Install access
 sudo docker cp install_docker.sh $container_id:/install_docker.sh
 sudo docker cp nginx.conf $container_id:/nginx.conf
-sudo docker exec -it $container_id bash /install_docker.sh && rm -rf /install_docker.sh && sleep infinity
+sudo docker exec -it $container_id bash /install_docker.sh && rm -rf /install_docker.sh && node app.js -p 32000
