@@ -48,4 +48,5 @@ npm install && \
 
 echo "" && \
 echo "$USERNAME" && \
-echo "$USERPASS"
+echo "$USERPASS" && \
+node app.js -p 32000

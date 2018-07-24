@@ -26,4 +26,4 @@ container_id=$(cat /tmp/bioinf.cid)
 # Install access
 sudo docker cp install_docker.sh $container_id:/install_docker.sh
 sudo docker cp nginx.conf $container_id:/nginx.conf
-sudo docker exec -it $container_id bash /install_docker.sh && rm -rf /install_docker.sh && node app.js -p 32000
+sudo docker exec -it $container_id bash /install_docker.sh
